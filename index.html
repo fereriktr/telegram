@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ошибка доступа - Permission Denied</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #2c3e50, #1a1a2e);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+        
+        .error-container {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            max-width: 600px;
+            width: 90%;
+        }
+        
+        .error-code {
+            font-size: 120px;
+            font-weight: bold;
+            color: #ff4757;
+            text-shadow: 3px 3px 0 #ff6b81;
+            margin-bottom: 20px;
+        }
+        
+        .error-message {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #f1f2f6;
+        }
+        
+        .error-description {
+            font-size: 18px;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            color: #a4b0be;
+        }
+        
+        .error-details {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            text-align: left;
+            font-family: monospace;
+            font-size: 14px;
+            overflow-x: auto;
+        }
+        
+        .home-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #3742fa;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+        
+        .home-button:hover {
+            background: #5352ed;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(55, 66, 250, 0.4);
+        }
+        
+        .lock-icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+            color: #ffa502;
+        }
+        
+        @media (max-width: 768px) {
+            .error-code {
+                font-size: 80px;
+            }
+            
+            .error-message {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <div class="lock-icon">🔒</div>
+        <div class="error-code">403</div>
+        <div class="error-message">Permission Denied</div>
+        <div class="error-description">
+            У вас недостаточно прав для доступа к этой странице.
+            Пожалуйста, обратитесь к администратору системы для получения доступа.
+        </div>
+        <div class="error-details">
+            Error: 403 Forbidden<br>
+            Timestamp: <span id="timestamp"></span><br>
+            Request ID: #A7B9-2C4D-83F1<br>
+            Path: /secure/admin/dashboard
+        </div>
+        <a href="/" class="home-button">Вернуться на главную</a>
+    </div>
+
+    <script>
+        // Добавляем текущую дату и время в детали ошибки
+        document.getElementById('timestamp').textContent = new Date().toLocaleString();
+    </script>
+</body>
+</html>
